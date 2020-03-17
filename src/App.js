@@ -1,127 +1,88 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+
+import Navigation from "./controller/navigation";
+import Header from "./controller/header";
+import Card from "./controller/cards";
+
+import SpeedMeter from "./controller/speedoMeter";
 
 function App() {
   return (
     <div className="App">
-      <header className="header">
-            <div className="header__logo-box">
-                <img src="img/vinod.png" alt="Logo" className="header__logo"/>
-            </div>
-            <div className="header__text-box">
-                <h1 className="heading-primary">
-                    <span className="heading-primary--main">Hi, i'm Vinod, I design & build</span>
-                    <span className="heading-primary--sub">YES, I'AM AVAILABLE FOR HIRE</span>
-                </h1>
-                <a href="#" className="btn btn--white btn--animated">explore</a>
-            </div> 
-       </header>
+        <Navigation />
+        <Header />
        <main className="section-about">
         <div  className="u-ceneter-text u-margin-bottom-8">
-            <h1 className="heading-secoundry">
+            <h1 className="heading-secondary">
                     My Work
                 </h1>
         </div>
         <div className="row">
-                    <div className="col-1-of-3">
-                       <div className="card">
-                           <div className="card__side card__side--front">
-                                <div className="card__picture card__picture--1">
-                                    &nbsp;
-                                </div>
-                                <h4 className="card__heading">
-                                    <span className="card__heading-span card__heading-span--1">Tallint, RMS</span>
-                                </h4>
-                                <div className="card__details">
-                                    <ul>
-                                        {/* <li>3 day tours</li>
-                                        <li>Up to 30 people</li>
-                                        <li>2 tour guides</li>
-                                        <li>Sleep in cozy hotels</li>
-                                        <li>Difficulty: easy</li> */}
-                                    </ul>
-                                </div>
-                           </div>
-                           <div className="card__side card__side--back card__side--back-1">
-                                <div className="card__cta">
-                                    <div className="card__price-box">
-                                        {/* <p className="card__price-only">Only</p>
-                                        <p className="card__price-value">$297</p> */}
-                                    </div>
-                                    <a href="#popup" className="btn btn--white">View</a>
-                                </div>
-                            </div>
-                       </div>
+                    <div className="col-1-of-3" >
+                       <Card cardHeadingTitle="Tallint RMS" 
+                        classToAdd={{forPicture:"card__picture--1",
+                        forHeading:"card__heading-span--1", 
+                        forBack:"card__side--back-1"}}/>
                     </div>
 
 
                     <div className="col-1-of-3">
-                        <div className="card">
-                            <div className="card__side card__side--front">
-                                <div className="card__picture card__picture--2">
-                                    &nbsp;
-                                </div>
-                                <h4 className="card__heading">
-                                    <span className="card__heading-span card__heading-span--2">Indium Carees</span>
-                                </h4>
-                                <div className="card__details">
-                                    <ul>
-                                        {/* <li>7 day tours</li>
-                                        <li>Up to 40 people</li>
-                                        <li>6 tour guides</li>
-                                        <li>Sleep in provided tents</li>
-                                        <li>Difficulty: medium</li> */}
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div className="card__side card__side--back card__side--back-2">
-                                <div className="card__cta">
-                                    <div className="card__price-box">
-                                        {/* <p className="card__price-only">Only</p>
-                                        <p className="card__price-value">$497</p> */}
-                                    </div>
-                                    <a href="#popup" className="btn btn--white">View</a>
-                                </div>
-                            </div>
-                        </div>
+                    <Card cardHeadingTitle="Tallint RMS" 
+                        classToAdd={{forPicture:"card__picture--2",
+                        forHeading:"card__heading-span--2", 
+                        forBack:"card__side--back-2"}}/>
                     </div>
 
 
                     <div className="col-1-of-3">
-                        <div className="card">
-                            <div className="card__side card__side--front">
-                                <div className="card__picture card__picture--3">
-                                    &nbsp;
-                                </div>
-                                <h4 className="card__heading">
-                                    <span className="card__heading-span card__heading-span--3">Hexaware Careers</span>
-                                </h4>
-                                <div className="card__details">
-                                    <ul>
-                                        {/* <li>5 day tours</li>
-                                        <li>Up to 15 people</li>
-                                        <li>3 tour guides</li>
-                                        <li>Sleep in provided tents</li>
-                                        <li>Difficulty: hard</li> */}
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div className="card__side card__side--back card__side--back-3">
-                                <div className="card__cta">
-                                    <div className="card__price-box">
-                                        {/* <p className="card__price-only">Only</p>
-                                        <p className="card__price-value">$897</p> */}
-                                    </div>
-                                    <a href="#popup" className="btn btn--white">View</a>
-                                </div>
-                            </div>
+                        <Card cardHeadingTitle="Tallint RMS" 
+                            classToAdd={{forPicture:"card__picture--3",
+                            forHeading:"card__heading-span--3", 
+                            forBack:"card__side--back-3"}}/>
                         </div>
+                </div>
+        {/* <SpeedMeter /> */}
+       </main>
+       <footer class="footer">
+            <div class="footer__logo-box">
+
+                {/* <picture class="footer__logo">
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+                            media="(max-width: 37.5em)"/>
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" src="img/logo-green-2x.png"/>
+                   
+                </picture> */}
+
+ 
+                
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="footer__navigation">
+                        faceboook
+                        instagram
+                        twitter
+                        linkedin
+                        {/* <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                        </ul> */}
                     </div>
                 </div>
-       </main>
+                <div class="col-1-of-2">
+                    {/* <p class="footer__copyright">
+                        Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>.
+                        Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal
+                        and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas
+                        Schmedtmann, is of course highly appreciated!
+                    </p> */}
+                </div>
+            </div>
+        </footer>
     </div>
   );
 }

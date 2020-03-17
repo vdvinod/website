@@ -1,0 +1,143 @@
+.wrapper {
+    display: table;
+    margin: 0 auto;
+    background: #F1F1F1;
+    padding: 35px 40px 40px;
+    border-radius: 6px;
+    box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.32), 0 1px 9px -1px #15222E;
+  }
+  .gauge {
+    font-family: Arial,Helvetica,sans-serif;
+    background: linear-gradient(90deg,#F13C3C,#E0DE8B,#62FF84);
+    box-shadow: 1px -6px 20px 15px hsla(0, 8%, 31%, 0.26), inset 1px 2px 15px 1px hsla(0, 9%, 42%, 0.69);
+    width: 200px;
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+    position: relative;
+    overflow: visible;
+    -webkit-transform-style: flat;
+    -webkit-transform: translateZ(0);
+
+    &::before{
+        content: "0";
+        position: absolute;
+        bottom: -9px;
+        font-size: 20px;
+        color: black;
+        left: -11px;
+    }
+    &::after{
+        content: "5";
+        position: absolute;
+        bottom: -9px;
+        font-size: 20px;
+        color: black;
+        right: -11px;
+    }
+  }
+  .gauge.min-scaled {
+    transform: scale(0.5);
+  }
+  .gauge-center {
+    content: '';
+    color: #fff;
+    width: 60%;
+    height: 60%;
+    background: #030000d6;
+    border-radius: 100px 100px 0 0;
+    position: absolute;
+    box-shadow: 0px -9px 20px 9px rgba(0, 0, 0, 0.45);
+    right: 21%;
+    bottom: 0;
+    color: #fff;
+  }
+  .gauge-center::before {
+    content: 'Rating';
+    font-size: 2em;
+    width: 100%;
+    padding: 30px 0 0 0;
+    text-align: center;
+    float: left;
+    -webkit-font-smoothing: antialiased;
+  }
+//   .gauge-center::after {
+//     content: 'units';
+//     width: 100%;
+//     float: left;
+//     opacitY: .6;
+//     text-align: center;
+//   }
+  .needle {
+    width: 78px;
+    height: 7px;
+    background: #15222E;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 5px;
+    position: absolute;
+    bottom: 4px;
+    left: 20px;
+    transform-origin: 100% 4px;
+    transition:transform 5s infinite;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.38);
+  }
+
+  .rotate {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 200px;
+    /* left: 23px; */
+    right: 20;
+   
+
+    &-36 {
+        transform: rotate(36deg);
+        &::before{
+            content: "1";
+            position: absolute;
+    bottom: -15px;
+    font-size: 20px;
+    color: black;
+    left: -11px;
+        transform: rotate(274deg);
+        }
+    }
+    &-72 {
+        transform: rotate(72deg);
+        &::before{
+            content: "2";
+            position: absolute;
+    bottom: -15px;
+    font-size: 20px;
+    color: black;
+    left: -11px;
+        transform: rotate(274deg);
+        }
+    }
+    &-108 {
+        transform: rotate(108deg);
+        &::before{
+            content: "3";
+            position: absolute;
+    bottom: -15px;
+    font-size: 20px;
+    color: black;
+    left: -11px;
+        transform: rotate(274deg);
+        }
+    }
+    &-144 {
+        transform: rotate(144deg);
+        &::before{
+            content: "4";
+            position: absolute;
+            bottom: -15px;
+            font-size: 20px;
+            color: black;
+            left: -11px;
+            transform: rotate(274deg);
+        }
+    }
+  }

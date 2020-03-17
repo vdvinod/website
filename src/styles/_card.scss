@@ -5,7 +5,9 @@
     -moz-perspective: 150rem;
     position: relative;
     height: 52rem;
-    
+    @include respond(tab-port) {
+        height: 65rem;
+    }
     &__side {
         height: 52rem;
         transition: all .8s ease;
@@ -17,7 +19,9 @@
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-
+        @include respond(tab-port) {
+            height: 65rem;
+        }
         &--front {
             background-color: $color-white;
         }
@@ -40,38 +44,50 @@
     }
   
 
-    &:hover &__side--front {
-        transform: rotateY(-180deg);
+    &:hover &__picture {
+      //  transform: rotateY(-180deg);
+     // perspective: 10px;
+     filter: blur(6px) brightness(.8);
+    
     }
+    
+    // &:hover &__side--back {
+    //   //  transform: rotateY(0deg);
+    // }
 
-    &:hover &__side--back {
-        transform: rotateY(0);
+    &:hover &__btn {
+        
+        right: 12rem;
+      
     }
-
 
     // FRONT SIDE STYLING
     &__picture {
         background-size: cover;
         height: 100%;
+        transition: all .8s ease;
         background-blend-mode: screen;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-        
+        @include respond(tab-port) {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), 
-            url(/screen-1.jpg);
+            url("../assets/img/screen-1.jpg");
         }
 
         &--2 {
             background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), 
-            url(/es.png);
+            url("../assets/img/es.png");
         }
 
         &--3 {
             background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), 
-            url(/hexa.png);
+            url("../assets/img/hexa.png");
         }
     }
 
@@ -87,12 +103,36 @@
         width: 75%;
     
     }
-
+    &__btn{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 25rem;
+        right: -12rem;
+        width: 75%;
+      //  display: none;
+        transition: all .8s ease;
+        &-1{
+            border: 3px solid black;
+            padding: 5px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            
+        }
+    }
+    &__cardView {
+        position: absolute !important;
+        bottom: 0;
+        right: 0;
+    }
     &__heading-span {
         padding: 1rem 1.5rem;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
-
+       
         &--1 {
             background-image: linear-gradient(to right bottom, 
             rgba($color-secondary-light, .85), 
@@ -111,7 +151,7 @@
             rgba($color-tertiary-dark, .85));
         }
     }
-
+    
     &__details {
         padding: 3rem;
 

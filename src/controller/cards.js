@@ -1,6 +1,7 @@
 import React from "react";
 
-const card = ({classToAdd}) => {
+const card = ({cardHeadingTitle ,classToAdd, showPopUpViewHandler}) => {
+    
     return (
         <div className="card">
          
@@ -10,10 +11,10 @@ const card = ({classToAdd}) => {
              </div>
             
              <h4 className="card__heading">
-                 <span className={"card__heading-span "+classToAdd.forHeading}>Tallint, RMS</span>
+                 <span className={"card__heading-span "+classToAdd.forHeading}>{cardHeadingTitle}</span>
              </h4>
              <div className="card__btn">
-               <span className="card__btn-1">View</span>
+               <span className="card__btn-1" onClick={showPopUpViewHandler}>View</span>
              </div>
              
              <div className="card__details">
@@ -32,7 +33,7 @@ const card = ({classToAdd}) => {
                      {/* <p className="card__price-only">Only</p>
                      <p className="card__price-value">$297</p> */}
                  </div>
-                 <a href="#popup" className="btn btn--white">View</a>
+                 <a href="#popup" className="btn btn--white" >View</a>
              </div>
          </div>
     </div>
